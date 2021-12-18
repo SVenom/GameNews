@@ -1,0 +1,420 @@
+
+  <% if(categories != '') { %>
+    <% categories.forEach(function(category, index) { %>
+      <a href="/categories/<%- category.name %>" class="col text-center category__link">
+        <div class="category__img shadow">
+          <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+        </div>
+        <div class="pt-1"><%- category.name %></div>
+      </a>
+    <% }) %>
+  <% } %>
+
+  
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+    <% if(categories != '') { %>
+        <% categories.forEach(function(category) { %>
+          <a href="/categories/<%- category.name %>" class="col text-center category__link">
+            <div class="category__img shadow">
+              <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%- category.name %></div>
+          </a>
+        <% }) %>
+      <% } %>
+
+
+
+LATEST NEWS
+ async function insertDymmyRecipeData(){
+//   try {
+//     await Recipe.insertMany([
+//       { 
+//         "name": "Clash Of Clane",
+//         "description": `Clash of Clans Winter 2021`,
+//         "News": [
+//           Hi Chief!
+                We’ve got a few new things that will go live during this maintenance - so without further ado let’s dive right in!
+              NEW SUPER TROOP: SUPER DRAGON
+              Look up in the sky! It’s a bird, it’s a pl...no wait, why is it angry looking? Why is it engulfed in eldritch flame? Oh no, it’s taking a deep breath.
+              Introducing a brand new Super Troop: Super Dragon.
+              Dragon has been a staple of Clash of Clans for nearly a decade. One of the best spam Troops for lower Town Hall levels and can still be found in many Clan Castles as a War donation. As an air Troop, Dragon avoids all the ugliness from Mortars and Cannons, and from Dragon’s lofty position in the sky, he’ll breathe metal-melting blasts of flame on his foes.
+              So what could Super Dragon possibly offer that Dragon, Baby Dragon, Inferno Dragon, Electro Dragon, Dragon Rider, or any other Draconid can’t already do? Super Dragon is the supreme Roast Master.
+              Though being a winged whirlwind of flame does make it hard for him to give good hugs.
+
+                      Favorite target: Any
+                      Damage type: Area Splash
+                      Targets: Ground & Air
+                      Housing space: 40
+                      Movement speed: 14
+                      Super Troop Cost: 25K Dark Elixir
+                      Training time: 6 mins
+
+
+              NEW SIEGE MACHINE: FLAME FLINGER
+              The Flame Flinger is a deadly contraption barely held together by spite and willpower. This little-understood wonder of siege engineering contains a payload of incendiary Fire Spirits that are flung over enemy defenses, leaving fiery destruction and mass mayhem in their wake. Although this ranged rover gives you the advantage of delivering damage from afar, it can’t take as much damage as other Siege Machines.
+
+                    Favorite target: Defenses
+                    Damage type: Area splash
+                    Targets: Ground
+                    Housing space: 1
+                    Movement speed: 6
+                    Training cost: 100,000 Gold
+                    Training time: 20 mins
+
+
+              Cost Reductions Coming Soon!
+                Hey Chief!
+                  In the coming update, we’ll be doing reductions to upgrade costs and upgrade times across the board. We wanted to make the journey from Town Hall 7 to Town Hall 12 a bit smoother so... from Troops to Heroes to Defenses to Spells, we’re slashing costs!
+
+                  Most buildings have had their Gold upgrade cost cut by 10-25% between TH7-TH12
+                  The Laboratory is getting massive cuts to Elixir costs and upgrade timers, especially on the first few levels of each Troop
+                  Heroes too! Barbarian King and Archer Queen get moderate cost and timer cuts through the middle levels (30-65), while the Grand Warden and Royal Champion receive large cuts to cost and timers for the first several levels to help players unlock their abilities sooner
+                  Did we mention Walls? Walls are getting 25-60% of their cost reduced from TH6 all the way to TH12.
+                  If you'd like to see all these cost and time reduction changes in detail, check out our official posts on the Clash of Clans subreddit:            
+//         ],
+//         "category": "Clash Of Clane", 
+//         "image": "clashnews.jpg"
+//       },
+
+
+
+
+//       { 
+//         "name": "Player Unknown Battle Ground",
+//         "description": `PUBG news update`,
+//         "News": [
+                      PUBG: New State developer Krafton has announced that its latest battle royale game will be down for maintenance on December 16. The developer will roll out a patch which will bring new content and updates to the battle royale game. The maintenance will be scheduled for more than six hours. Players will not be able to access PUBG: New State during the maintenance period. As a part of the December update, players will get a new weapon, new vehicles, more customisation options for weapons, among others.
+
+                      Through a blog post, Krafton announced the maintenance schedule for PUBG: New State (review). The battle royale game will be down on December 16 from 12am (midnight) to 6:30am UTC (5:30am to 12pm (noon) IST). As per the announced time, the maintenance should have been completed by now, at the time of writing. Once the game goes into maintenance, players will not be able to access the game. When the game is updated on Krafton's servers, players will have to individually update the game on iOS and Android to gain access to the new content.
+
+                      If for some reason, the update button isn't visible on the respective app stores, players would need to clear the cache for PUBG: New State to install the update. To clear the cache on Google Play store, head to Settings > Application > Google Play Store > Storage > Delete Cache. Similarly, for Galaxy Store head to Settings > Application > Galaxy Store > Storage > Delete Cache. However, there is no method mentioned to clear the cache on iOS.
+
+                      As a part of the December update, players would gain access to Survivor Pass season 2 that will allow them to unlock upgraded level rewards for Premium Pass with new vehicle skins and character costumes. Alongside, players will also get an L85A3 assault rifle with 5.56mm ammo. It is said to have the highest damage among all 5.56mm ammo weapons and performs well in mid-to-long range fire fights. It will be available in Erangel and Troi maps.
+
+                      Furthermore, players will also get two new vehicles — Electron and Mesta. The former is a six-seater electric minibus while the latter is a two-seater gasoline powered sports car. Electron can be found in Troi and Training Grounds while Mesta can be found in Erangel, some parts of Troi and training grounds.
+
+                      PUBG: New State will also get new lobby music and the theme will get new winter decorations. Once the game is updated, players will get access to all the aforementioned new content.
+//         ],
+//         "category": "PUBG", 
+//         "image": "pubgnews.jpg"
+//       },
+
+
+        { 
+//         "name": "Valorent",
+//         "description": EVERYTHING ABOUT THE VALORENT PATCH NOTE 3.0 UPDATE,
+//         "News": [
+            //           Valorent released the patch note 3.0 on 22 June 2021 which focuses mainly on two critical components of the  game. These are Increasing the importance of precise gunplay and expanding the tactical sandbox
+            AGENT UPDATE:
+            With patch note 3.0 the developer has adjusted ability pricing, cooldown rates, and ultimate costs on every agent. Previously it was noted that certain agents were able to have too much impact on their abilities without making significant tradeoffs.
+
+            SOCIAL UPDATES:
+            Players can now invite to party with Riot ID in custom game
+            The social panel now comes with hover cards
+            PERFORMANCE UPDATES:
+            Improved clipping plane calculations using multithreading
+            Improved thread utilization across multiple cores for distributed tasks
+            Optimized camera calculations
+            Optimized ambient audio for each map
+            Fix for Character Ability HUD invalidation box
+            General optimizations for all ability animations
+            GAMEPLAY TECHNOLOGY
+            Fixed a bug where the inner crosshair toggle feature wasn’t working
+            Fixed a bug where AOE kills were not rewarding the appropriate character if the enemy was in a debuffed state
+            Fixed a bug where the Spike icon pulse and beeping sound were not in sync
+            Fixed a bug where Ally defuse progress bar sometimes fails to appear
+            Fixed a bug where Observer’s Kill feed has no team colors
+            Reverted our fix for the “swirly arms” in the last patch, since it was causing significant animation snapping
+            WEAPON UPDATES
+            Bullet tagging changed from 75% slow >>> 72.5% slow
+            Weapon Dead zones changed from 30% >>> 27.5%
+            COMPETITIVE UPDATES
+            Reduced the possibility of feeling “hard stuck” on older accounts. If your skill improves, your rank should properly reflect that, regardless of account age.
+            Matchmaking accuracy will improve across all ranks, which should lead to a smoother ranked climb and reduce how hard you may swing up and down in rank
+            While winning games is still the most important factor, individual performance will also be accounted for to improve matchmaking at Immortal+
+            This should result in better matches at the highest levels.
+            Close games will have a smaller effect on rank rating gains and losses
+            Adjusted our Rank Rating curves, so climbing (or falling) should feel less volatile
+            Updated Rank distribution
+            Placements raised to Diamond 1
+            PROGRESSION UPDATES
+            Happy anniversary VALORANT! To celebrate the developer has added a new Year One Event Pass—this is similar to a Battlepass but it’s completely free and has some cool goodies.
+            This will be active for the duration of Patch 3.0 and will only last till 3.01 goes live. So remember to get your goodie bag before the party ends.
+            What’s a party without friends? We’ve also added a Squad Boost: You will get extra XP when you play in a premade group.
+            +8% boost for one additional player, +12% for two, +16% for three, and +20% for a full squad.
+            This will also be active for the duration of 3.0.
+            We’re also permanently adding Account Leveling: A new way to recognize and reward you for your time playing in all VALORANT game modes.
+            Your account Player Card will now display a numeric level based on how much you play.
+            In addition to that, you will also be boosted to a certain level based on how many games you’ve played before Patch 3.0.
+//         ],
+//         "category": "Valorent", 
+//         "image": "valonews.jpg"
+//       },
+
+
+
+
+        { 
+//         "name": "GTA-V",
+//         "description":EVERYTHING ABOUT THE GTA-V,
+//         "News": [[December 15, 2021] – New Content in Grand Theft Auto Online
+
+                        The Contract has been added to GTA Online. Today’s update includes 7 new cars, 3 new weapons, the Agency property, the Dr. Dre Contract missions, Security Contracts, Payphone Hits, the MOTOMAMI Los Santos radio station, new music on Radio Los Santos and West Coast Classics, Record A Studios, Short Trips, new clothing and accessories, new Quality of Life updates and more.
+                        The Agency Property:
+                        A new multi-floor property that acts as the base of operations for F. Clinton & Partner. It can be purchased from dynasty8executive.com. Purchasing the Agency property gives owners access to several new features including new GTA Online story missions for solo players or for groups.
+                        The Dr. Dre Contract:
+                        After partnering with Franklin Clinton in his Agency and setting up the business, players can begin new Story Missions which has them working with Dr. Dre to recover valuable stolen property. These Missions can be played either solo or with other players.
+                        Security Contracts:
+                        Security Contracts are Freemode Missions that are launched from the Agency computer. These are jobs for your clients in need of help. Security Contracts have various difficulty levels that can increase the cash reward for completion:
+                        Recover Valuables
+                        Vehicle Recovery
+                        Gang Termination
+                        Rescue Operation
+                        Asset Protection
+                        Liquidize Assets
+                        Payphone Hits:
+                        Payphone Hits are Freemode Missions that task players with taking out a target and come with bonus rewards for meeting special criteria — such as using certain weapons, vehicles, killing at specific locations or timings. These missions are started by answering ringing payphones throughout the map and can be accessed after completing a few Security Contracts.
+                        Three new Weapons have been added to GTA Online:
+                        Heavy Rifle available at Ammu-Nation or the Agency’s Armory
+                        Compact EMP Launcher available at the Agency’s Armory
+                        Stun Gun available at the Agency’s Armory
+                        Four new Weapons Finishes. These can be unlocked by completing specific gameplay from The Contract:
+                        Bone Finish (Pump Shotgun)
+                        Families Finish (Heavy Rifle)
+                        Organics Finish (Micro SMG)
+                        Record A Finish (AP Pistol)
+                        Seven new Vehicles have been added to GTA Online:
+                        Pfister Astron
+                        Bravado Buffalo STX
+                        Dewbauchee Champion
+                        Lampadati Cinquemila
+                        Enus Deity
+                        Pegassi Ignus
+                        Enus Jubilee
+                        Record A Studios:
+                        Record A Studios is a new music studio social space added to GTA Online. Here, players can watch Dr. Dre at work and socialize with other players. 
+                        Short Trips:
+                        Short Trips are two-player missions available after completing the Dr. Dre Contract.
+                        Over 300 items of Clothing have been added for both Male and Female characters in GTA Online.
+                        28 new Tattoos have been added for both Male and Female characters in GTA Online.
+                        14 new Face Paints have been added to GTA Online.
+                        New Media Stick Collectibles have been added to GTA Online.
+                        One new Hairstyle been added for both Male and Female characters in GTA Online.
+                        One new Radio Station called ‘MOTOMAMI Los Santos’ has been added to GTA Online.
+                        New music has been added to Radio Los Santos and West Coast Classics.
+                        Several new Pause Menu Awards have been added to GTA Online.
+                        Several new Daily Objectives have been added to GTA Online.
+                        Quality of Life Updates
+
+                        Players will receive fewer phone calls in GTA Online. Players will see the addition of new map blips, markers and help text to replace phone calls.
+                        Daily Fees in GTA Online have been reduced.
+                        The Arcade Game ‘QUB3D’ has been added to the upstairs area of the Auto Shop.
+                        Players can now alter the number of laps that must be completed in LS Car Meet Head-to-Head Races. Rewards are increased for completing more laps.
+                        Players are now rewarded LS Car Meet Reputation for completing Auto Shop Contracts, Customer Deliveries, and Exotic Exports Deliveries.
+                        The safe capacity in the Nightclub and Arcade has been increased.
+                        Game Stability and Performance
+
+                        Fixed a crash on PC that occasionally occurred after idling in the Auto Shop.
+                        Fixed a crash that occurred when joining friends after viewing a clip in the Rockstar Editor.
+                        Matchmaking and Networking
+
+                        Fixed several issues that affected matchmaking in GTA Online.
+                        Fixed multiple issues that resulted in players getting stuck while transitioning between GTA Online content.
+                        Fixed an issue that resulted in players being put into incorrect lobbies after using the ‘Quick Job’ option.
+                        Refixed an issue that resulted in players incorrectly receiving the alert ‘Player is no longer in session.’ when trying to ‘Join Game’ with a friend from their Steam Friends List.
+                        Fixed an issue that resulted in players getting stuck on the sky camera after choosing to replay The Agency Deal – Finale on the next job voting screen.
+                        Content
+
+                        Fixed an issue that resulted in players incorrectly having a one-hour cooldown when trying to launch the Cayo Perico Heist – Finale.
+                        Fixed an issue that resulted in a door being incorrectly locked, blocking Mission progression in the Cayo Perico Heist – Finale.
+                        Fixed an issue that caused the drainage tunnel gate to already appear as cut in the Cayo Perico Heist – Finale.
+                        Fixed an issue that resulted in players being stuck with no functionality after dying during The Agency Deal – Finale.
+                        Fixed an issue that resulted in players colliding with another vehicle when spawning after exiting the garage in The Union Depository Contract – Elevator Key.
+                        Fixed an issue that resulted in enemies being invincible in The Bank Contract – Thermal Charges.
+                        Fixed an issue that resulted in players being unable to exit the meth labs in The Lost Contract – Finale.
+                        Fixed an issue that resulted in players being unable to plant the explosives in The Lost Contract – Finale.
+                        Fixed an issue that caused the vehicle drop-off location to be different than what the player had chosen in The Union Depository Contract – Finale.
+                        Fixed spawning issues that were present in the Adversary Mode – Kart Krash: Full Auto
+                        Fixed an issue that resulted in players getting stuck on a black screen after completing a Pursuit Race.
+                        Fixed an issue that caused cops to not spawn during Pursuit Races.
+                        Fixed an issue that resulted in players having no prompts when trying to repair a vehicle for the Repair and Mod Business.
+                        Fixed an issue that caused the ‘Purchase Vehicle’ prompt to incorrectly appear when trying to mod a vehicle for the Repair & Mod Business.
+                        Fixed an issue that resulted in players being unable to collect the Media Stick Collectible at Moodymann’s car in the LS Car Meet.
+                        Fixed an issue that meant runners up would not receive a first-time bonus after completing their first LS Car Meet Sprint Race.
+                        Fixed an issue that resulted in players receiving an incorrect reward after collecting all the Shipwreck Collectibles.
+                        Fixed an issue that resulted in players spawning out of bounds during the Special Vehicle Work – Asset Seizure.
+                        Properties
+
+                        Fixed an issue that resulted in players being stuck on a black screen after trying to drive into another player’s Auto Shop.
+                        Fixed an issue that caused players to get stuck on the ramp when trying to enter the Auto Shop.
+                        Fixed an issue that caused players’ characters to move around while playing the Race & Chase Arcade Game in the Auto Shop.
+                        Fixed an issue that resulted in players getting stuck on a black screen after trying to exit the Mobile Operations Center in the Scramjet.
+                        Fixed an issue that caused the modding menu to incorrectly collapse while in the Mobile Operations Center Vehicle Workshop.
+                        Fixed an issue that resulted in players being unable to enter their Kosatka.
+                        Fixed an issue that caused other players’ characters to appear using your Kosatka periscope when using their own.
+                        Fixed an issue that caused other players’ characters to appear using your Kosatka Heist planning table when using their own.
+                        Fixed an issue that caused the player’s Kosatka to be destroyed with one rocket.
+                        Fixed an issue that resulted in players seeing under the map when spawning in their Kosatka after joining a new session.
+                        Fixed an issue that caused the green juice to appear floating in the Auto Shop.
+                        Fixed an issue that caused the Pegassi Toreador to collide with an Arcade Machine when exiting the Auto Shop Mod Shop.
+                        Fixed an issue that meant players could walk on top of other players’ cars while being modded in the LS Car Meet Mod Shop.
+                        Fixed an issue that resulted in players getting stuck on a black screen when moving to a parked space from the Auto Shop Mod Shop while being a passenger in another players’ personal vehicle.
+                        Fixed an issue that resulted in players being unable to buy the Garage add-on for their Office property.
+                        Vehicles
+
+                        Fixed an issue that caused the non-armored Karin Karuma to be bulletproof.
+                        Fixed an issue that caused the first-person camera to clip through the Track Seat mods when looking backwards in the Annis Remus.
+                        Miscellaneous
+
+                        Fixed several transaction errors that occurred on PC.
+                        Fixed an issue that resulted in players being unable to purchase any of the Tuner Chrome Wheels in the Auto Shop Mod Shop.
+                        Fixed an issue that caused mods purchased in another player’s Auto Shop Mod Shop to not persist on your vehicle.
+                        Fixed areas of the LS Car Meet where players could get stuck.
+                        Fixed an issue that caused the LS Car Meet Head to Head Race ‘Lap’ UI to not be visible.
+                        Fixed UI issues that occurred when having both the LS Car Meet ‘Test Track’ menu and the Brucie ‘Bull Shark Testosterone’ menu on screen.
+                        Fixed an issue that caused the ‘Personal Vehicle Management’ menu in the LS Car Meet to be out of order.
+                        Fixed an issue that resulted in players getting stuck on a black screen when entering the LS Car Meet Test Track as a passenger in another player’s car.
+                        Fixed an issue that caused some Los Santos Tuners Awards to have incorrect images.
+                        Fixed an issue that caused the 'Random' Quick Job option to take players to the ‘Activities’ list.
+                        Fixed an issue that caused some Arcade Games to have incorrect help text in the Japanese version of the game.
+                        Fixed an issue that resulted in players getting stuck with no functionality after choosing to store the Casino Heist reward Enus Paragon R (Armored) at one of their properties.
+                        Fixed an issue that caused the ‘Play Jobs' Pause Menu option to be incorrectly unavailable.
+                        Fixed an issue that resulted in players not receiving a call from Simeon, meaning they were unable to purchase properties after reaching Rank 5 in GTA Online.
+//         ],
+//         "category": "GTA-V", 
+//         "image": "gta5.jpg"
+//       },
+
+
+
+
+        { 
+//         "name": "Rocket League",
+//         "description": News about Rocket League,
+            "News":
+                   [Get ready for the most wonderful time of the year in Rocket League! The annual winter event, Frosty Fest, will make its return starting December 16, featuring wintery items, Golden Gifts, LTMs, and more! 
+
+                    Starting Thursday at 9 a.m. PST (5 p.m. UTC), complete Frosty Fest Challenges to unlock the coolest new items in Rocket League, featuring Ring-a-Ling Wheels, three new Decals, Flannel Paint Finish, "Abominable Throwman" Player Title, and more! Check them all out in the slideshow below. Plus, claim the Ski-Free Player Banner in the Item Shop for free all throughout Frosty Fest! 
+
+                    Since it's the season for gift giving, we're bringing back Golden Gifts! The Challenge for Golden Gifts can be completed five times and the gifts will unlock items from the Zephyr, Elevation, and Vindicator Item Series. 
+
+                    Beckwith Park is getting into the spirit of the season with a new Snowy variant of the classic Arena. Slide into this new version in Ranked, Casual, and Private Matches throughout the event! Then, sled into the featured LTMs of Winter Breakaway and Spike Rush! If you haven't checked them out before, Winter Breakaway takes place on Throwback Stadium (Snowy) and replaces the standard ball with the hockey puck from Snow Day. In Spike Rush, the Spike power-up from Rumble Mode is engaged after kickoff. The ball carrier can't boost and is demolished on impact, but can pass the ball to teammates to pull off some ice cold plays! Enjoy Winter Breakaway starting December 16 through December 24 and Spike Rush from December 24 through January 3.
+
+                    If you're still looking to deck your car in even more seasonal items, be sure to check out the Item Shop, which will feature plenty of festive finds. There will even be a new Frosty Pack bundle including Tygris (Crimson Painted), Frostbite Boost (Forest Green Painted), Wonderment Wheels (Crimson Painted), and Sub-Zero Goal Explosion (Forest Green Painted) for 1100 Credits. 
+
+                    We hope you enjoy this year's Frosty Fest in Rocket League! From all of us at Psyonix, have a wonderful holiday and rest of 2021! 
+
+                    Classic meets current when two models of the iconic Ford MustangⓇ vehicle charge into Rocket League! Prepare yourself for the cutting-edge, all-electric Ford Mustang Mach-E™ SUV and the car that started it all: the 1965 Ford Mustang ShelbyⓇ GT350R. See them in action in the trailer above featuring voice-over from Emmy Award Winning actor and the voice of Ford, Bryan Cranston! 
+
+                    Whether you're looking for the authenticity of classic American* muscle, or the high-tech speed of the new all-electric Mustang, these cars represent the fusion between power and innovation from different generations. The Ford Mustang Mach-E Rocket League Edition (RLE) and the Ford Mustang Shelby GT350R RLE will be available in Rocket League on December 9 through December 22. The Mustang Mach-E becomes electrically charged when it goes supersonic, giving it a shocking visual lightning effect. Check it out in the trailer above and the screenshots below! 
+
+                    Here's everything included in both Mustang bundles:
+
+                    FORD MUSTANG MACH-E RLE - 1100 CREDITS
+                    Ford Mustang Mach-E RLE (Octane Hitbox) 
+
+                    Ford Performance Decal
+
+                    98 Decal
+
+                    Ford Mustang Mach-E RLE Wheels
+
+                    E.V. Boost
+
+                    Mustang Mach-E Player Banner
+
+                    Ford Mustang Mach-E RLE Engine Audio
+
+                    FORD MUSTANG SHELBY GT350R RLE - 1100 CREDITS
+                    Ford Mustang Shelby GT350R RLE (Dominus Hitbox)
+
+                    Ford Performance Decal
+
+                    98 Decal
+
+                    Ford Mustang Shelby GT350R RLE Wheels
+
+                    98 Player Banner
+
+                    Ford Mustang Shelby GT350R RLE Engine Audio
+
+                    Players can also get everything in both bundles for 2000 Credits. Plus, both the Ford Mustang Mach-E RLE and Ford Mustang Shelby GT350R RLE are customizable with other Rocket League items! 
+
+                    NOTE: The Ford Mustang Mach-E RLE and Ford Mustang Shelby GT350R RLE cannot be customized with licensed customization items. 
+
+                    
+                    FORD RETURNS TO THE ROCKET LEAGUE CHAMPIONSHIP SERIES
+                    The name synonymous with competition is coming back to the RLCS by becoming the Presenting Sponsor of the Fall Major from December 8 through December 12 in Sweden. This will be the first time we're seeing cross-regional RLCS competition in over a year and is sure to bring the high-octane action from the best Rocket League pros in the world! 
+
+                    And that's not all. Following the Fall Major, be sure to tune into the second iteration of the Ford + Rocket League Freestyle Invitational on December 15-16. Watch and vote for the best freestylers in the U.S. as they flip, pinch, and aerial in their choice of the Ford Mustang Mach-E RLE and the Ford Mustang Shelby GT350R RLE. Ford will award the winner of the Ford + Rocket League Freestyle Invitational a brand-new 2022 Ford Mustang Mach-E! 
+
+                    Get ready to grip the wheel, hit the accelerator, and harness the power of the Ford Mustang Mach-E RLE and the Ford Mustang Shelby GT350R RLE in Rocket League on December 9! 
+
+
+
+
+                    Shelby and GT350 are registered trademarks of Carroll Hall Shelby Trust.
+
+                    *Assembled in the USA with domestic and foreign parts
+//         ],
+//         "category": "Rocket League", 
+//         "image": "rocketleaguenews.jpg"
+//       },
+
+
+
+
+
+        { 
+//         "name": "Fortnite",
+//         "description": News For Fortnite,
+//         "News": [
+//           WELCOME TO THE NEXT CHAPTER OF FORTNITE
+              THE ISLAND FROM CHAPTER 2 HAS BEEN TURNED UPSIDE DOWN… LITERALLY. STEP ONTO THE NEW ISLAND AND EXPLORE EVERY CORNER OF AN UNDISCOVERED WORLD IN FORTNITE CHAPTER 3 SEASON 1: FLIPPED!
+              BREAKING THE ICE
+              FORTNITE CHAPTER 3 SEASON 1 IS A NEW BEGINNING — A PERFECT STARTING POINT FOR NEW PLAYERS AND A PERFECT RETURNING POINT FOR THOSE WHO HAVEN’T PLAYED IN A WHILE. WITNESS THE WINTRY NEW ISLAND THAW, DISCOVER NEW LOCATIONS PLUS A FEW SURPRISES, SEIZE VICTORY CROWNS, AND COMPLETE NEW QUESTS.
+              SLIDE, SWING, AND RETREAT
+              RUNNING DOWNHILL? TRY SLIDING TO GET AROUND QUICKLY AND EVADE ENEMY FIRE — WHILE STILL BEING ABLE TO SHOOT AND BUILD. WANNA SWING ON THE DAILY BUGLE AND OTHER BUILDINGS? STARTING DECEMBER 11, YOU’LL BE ABLE TO PUT ON SPIDER-MAN'S WEB-SHOOTERS. DID AN ENEMY KNOCK YOU OUT? YOU’RE NOW ABLE TO CRAWL FASTER TO SAFELY REACH YOUR SQUAD. (YOU CAN NOW PICK STUFF UP WHILE KNOCKED OUT TOO!)
+              SWING AS SPIDEY
+              YOU CAN PUT ON SPIDER-MAN'S WEB-SHOOTERS NO MATTER WHAT OUTFIT YOU’RE USING, BUT YOU CAN ALSO PUT THEM ON AS THE ICONIC WEB-SLINGER HIMSELF. WITH THE CHAPTER 3 SEASON 1 BATTLE PASS, UNLOCK OUTFITS LIKE SPIDER-MAN, THE WANDERER RONIN, THE OUTLAW HARLOWE, AND MORE. LATER ON IN CHAPTER 3 SEASON 1, UNLOCK THE LEADER OF THE LEGENDARY “SEVEN”: THE FOUNDATION. AND SPEAKING OF SPIDER-MAN, LOOK OUT FOR NEW SPIDEYS (PLUS A FEW FRIENDS AND FOES) DROPPING INTO THE ITEM SHOP THROUGHOUT THE SEASON!
+              XP BEYOND BATTLE ROYALE
+              BATTLE ROYALE ISN’T THE ONLY PLACE TO EARN XP TOWARDS YOUR BATTLE PASS. YOU CAN ALSO EARN XP FROM ACCOLADES IN CREATIVE! CREATORS CAN INCORPORATE ACCOLADES IN THEIR MAPS, GAMES, OR EXPERIENCES FOR PLAYERS JUMPING IN. PLAY YOUR PREFERRED WAY TO UNLOCK SPIDEY, THE FOUNDATION, AND MORE!
+              SNOW AND SEA, DESERT AND PASTURE
+              THE NEW ISLAND ISN’T JUST A FRESH BATTLEFIELD. IT’S ALSO RIPE FOR EXPLORATION. ROAM THE WESTERN SNOWFIELD AND ASCEND TO A “SEVEN OUTPOST.” TRAVERSE THE EASTERN TROPICS WITH A MOTORBOAT. GET A TASTE OF COZY LIVING IN CONDO CANYON. AND AFTER MOST OF THE SNOW HAS THAWED, CROSS THE GRASSLANDS AND DISCOVER A PREVIOUSLY SNOWED-IN SECRET.START A CAMP WITH YOUR SQUAD
+              FOUND A PRISTINE LANDSCAPE YOU DON’T WANT TO LEAVE BEHIND? NEED A HOME BASE WHILE EXPLORING THE ISLAND? THROW DOWN A TENT TO HEAL UP OR STASH ITEMS TO COLLECT IN FUTURE MATCHES. A TEAMMATE CAN USE YOUR TENT TO ASSEMBLE THEIR OWN, MEANING THE WHOLE SQUAD CAN GET IN ON THE FUN. IF THE STORM’S COMING UP ON YOUR CAMP, PACK YOUR TENTS FOR A NEW CAMPSITE — OR LEAVE ‘EM IF THERE’S NO TIME. YOU CAN STILL ACCESS YOUR STASHED ITEMS IN NEW TENTS!
+              TAKE THE CROWN, DEFEND THE CROWN
+              PLACE HIGHLY ENOUGH IN BATTLE ROYALE AND EARN A VICTORY CROWN. YOU’LL START YOUR NEXT MATCH WEARING A CROWN — BUT WITH BRAGGING RIGHTS COME HIGH STAKES. THE CROWN WILL SHINE IN ALL ITS GLORY, MAKING YOU STAND OUT TO THOSE SEEKING A VICTORY CROWN OF THEIR OWN. HOLD ON TO YOUR CROWN FOR BONUS XP DURING THE MATCH, AND IF YOU’RE SKILLED ENOUGH TO WIN WHILE WEARING THE CROWN, YOU’LL GET AN EXCLUSIVE EMOTE!
+
+//         ],
+//         "category": "Fortnite", 
+//         "image": "fortnitenews.png"
+//       },
+
+
+
+
+
+
+        { 
+//         "name": "Recipe Name Goes Here",
+//         "description": `Recipe Description Goes Here`,
+//         "News": [
+//           "1 level teaspoon baking powder",
+//           "1 level teaspoon cayenne pepper",
+//           "1 level teaspoon hot smoked paprika",
+//         ],
+//         "category": "American", 
+//         "image": "southern-friend-chicken.jpg"
+//       },
+
+
+
+//     ]);
+//   } catch (error) {
+//     console.log('err', + error)
+//   }
+// }
+
+// insertDymmyRecipeData();
+

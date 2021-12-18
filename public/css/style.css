@@ -1,0 +1,64 @@
+body{
+    background-color: bisque;
+}
+@import url('https://fonts.googleapis.com/css2?family=Candal&family=Ceviche+One&family=Irish+Grover&display=swap');
+*{
+font-family:'Candel',sans-serif ;
+}
+#gamelogo{
+    border-radius: 5px;
+}
+/* Explore Image */
+
+#exploreimg {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    height: 256px;
+    margin-bottom: 10px;
+    /* box-shadow: 0px 3px 6px rgba(0,0,0,.16); */
+    overflow: hidden;
+    /* border-radius: 8px; */
+}  
+#exploreimg--large {
+    height: 330px;
+}
+#exploreimg img {
+    width: 73%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Category Card */
+
+.category__link {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+.category__img:hover {
+  transform: scale(1.1);
+}
+
+.category__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,.16);
+  overflow: hidden;
+  border-radius: 8px;
+  transition: 250ms all;
+
+}
+
+.category__img--large {
+  height: 330px;
+}
+
+.category__img img {
+  width: 100%;
+  object-fit: cover;
+}
