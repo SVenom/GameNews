@@ -1,0 +1,17 @@
+<%- include('./layouts/main_layouts.ejs') -%>
+<h1 class="pb-4">Explore Random</h1>
+
+<div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+  <% if(showrandom != '') { %>
+   
+    <a href="/latest_news/<%= showrandom._id %>" class="col text-center category__link">
+      <div class="category__img category__img--large shadow">
+        <img src="/img/<%= showrandom.image %>" alt="<%= showrandom.name %>" loading="lazy">
+      </div>
+      <div class="pt-1"><%= showrandom.name %></div>
+    </a>
+  
+  <% } else { %>
+    <p>No items found.</p>
+  <% } %> 
+</div>

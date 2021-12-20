@@ -10,12 +10,10 @@ exports.getNews= async (req,res,next)=> {
     try {
         const limitNumber =5;
         const categories = await category.find({}).limit(limitNumber);
-        const latest = await latestnews.findOne({desdescription
-            :
-            "Hi Chief!"
-            })
-        const news = latest;
-        console.log(latest);
+        const latest = await latestnews.find({}).sort({_id: -1}).limit(limitNumber);
+        const coc = await latestnews.find({"category": 'Clash-Of-Clans'}).limit(limitNumber);
+        const news = {latest,coc};
+        // console.log(latest);
         // console.log( "MONGO ID:", news[0]._id);
         res.render('news.ejs',{categories,news});
         console.log("In news js");
@@ -37,6 +35,129 @@ exports.getviewAll= async (req,res,next)=> {
     }
 
 }
+
+exports.getviewAllById= async (req,res,next)=> {
+    try {
+        let viewallId = req.params.id;
+        // console.log("feaching:" ,viewallId);
+        const limitNumber =20;
+        const viewById = await latestnews.find({'category': viewallId}).limit(limitNumber);
+        // console.log(viewById);
+        res.render('viewall.ejs',{viewById});
+        // console.log("In viewall js");
+    } catch (error) {
+        res.status(500).send({message: Error.message || "Error Occured"});
+    }
+
+}
+
+exports.searchnews = async(req, res,next) => {
+    try {
+      let searchTerm = req.body.searchTerm;
+      let search = await category.find( { searchTerm });
+      res.render('search.ejs', { search } );
+    } catch (error) {
+      res.status(500).send({message: error.message || "Error Occured" });
+    }
+    
+  }
+
+
+
+
+exports.getspecificNews = async (req,res,next)=> {
+    try {
+       let newsid = req.params.id;
+       const news = await latestnews.findById(newsid);
+        res.render('latest_news.ejs',{news});
+        console.log("In latestnews js");
+    } catch (error) {
+        res.status(500).send({message: Error.message || "Error Occured"});
+    }
+
+}
+
+exports.explorelatest = async (req,res,next)=> {
+    try {
+        const limitNumber = 20;
+        const latest = await latestnews.find({}).sort({_id: -1}).limit(limitNumber);
+        res.render('explore-latest.ejs',{latest});
+        console.log("In explore-latest js");
+    } catch (error) {
+        res.status(500).send({message: Error.message || "Error Occured"});
+    }
+
+}
+
+exports.exploreRandom = async(req, res) => {
+    try {
+        
+      let count = await latestnews.find().countDocuments();
+      let random = Math.floor(Math.random() * count);
+      let showrandom = await latestnews.findOne().skip(random).exec();
+      res.render('explore-random.ejs', {showrandom } );
+    } catch (error) {
+      res.status(500).send({message: error.message || "Error Occured" });
+    }
+  }
+
+  /**
+ * GET /submit-news
+ * Submit News
+*/
+exports.submitnews = async(req, res,next) => {
+    const infoErrorsObj = req.flash('infoErrors');
+    const infoSubmitObj = req.flash('infoSubmit');
+    res.render('submit_news.ejs', {infoErrorsObj, infoSubmitObj  } );
+  }
+  
+  /**
+   * POST /submit-news
+   * Submit News
+  */
+  exports.submitnewsonpost = async(req, res,next) => {
+    try {
+  
+      let imageUploadFile;
+      let uploadPath;
+      let newImageName;
+  
+      if(!req.files || Object.keys(req.files).length === 0){
+        console.log('No Files where uploaded.');
+      } else {
+  
+        imageUploadFile = req.files.image;
+        newImageName = Date.now() + imageUploadFile.name;
+  
+        uploadPath = require('path').resolve('./') + '/public/img/' + newImageName;
+  
+        imageUploadFile.mv(uploadPath, function(err){
+          if(err) return res.satus(500).send(err);
+        })
+  
+      }
+  
+      const newNews = new latestnews({
+        name: req.body.name,
+        description: req.body.description,
+        email: req.body.email,
+        news: req.body.news,
+        category: req.body.category,
+        image: newImageName
+      });
+      
+      await newNews.save();
+  
+      req.flash('infoSubmit', 'News has been added.')
+      res.redirect('/submit-news');
+    } catch (error) {
+      // res.json(error);
+      req.flash('infoErrors', error);
+      res.redirect('/submit-news');
+    }
+  }
+
+
 
 
 

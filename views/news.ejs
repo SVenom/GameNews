@@ -49,15 +49,39 @@
       </div>
       <div class="row rpw-cols-2 row-cols-lg-5 g-2 g-lg-3">
        <% if(news != '') { %>
-        <% news.forEach(function(Latest)){ %>   
-        <a href="/latest-news/<%- Latest.id %>" class=" col text-center categaroy__link">
+         <% news.latest.forEach(function(Latest){ %>   
+        <a href="/latest_news/<%- Latest._id %>" class=" col text-center categaroy__link">
+            <div class="category__img  category__img shadow">
+                <img src="img/<%- Latest.image %>" alt="<%- Latest.name %>" loading="lazy">
+            </div>
+            <div class="pt-1"><%- Latest.category%></div>
+        </a>
+      <% }) %>
+      <% } %>
+      </div>
+  </section>
+
+  <!-- Latest End -->
+  
+  <!-- Coc Start -->
+
+  <section class="pb-4 pt-4">
+      <div class="d-flex mb-2 align-items-center">
+          <h2>Clash Of Clane News</h2>
+          <a href="/viewall" class="ms-auto">View More</a>
+      </div>
+      <div class="row rpw-cols-2 row-cols-lg-5 g-2 g-lg-3">
+       <% if(news != '') { %>
+         <% news.coc.forEach(function(Latest){ %>   
+        <a href="/latest_news/<%- Latest.id %>" class=" col text-center categaroy__link">
             <div class="category__img  category__img--large shadow">
                 <img src="img/<%- Latest.image %>" alt="<%- Latest.name %>" loading="lazy">
             </div>
             <div class="pt-1"><%- Latest.name%></div>
         </a>
+      <% }) %>
       <% } %>
-      <% } %>
-       
       </div>
   </section>
+
+  <!-- Coc End -->
