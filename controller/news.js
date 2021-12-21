@@ -28,7 +28,7 @@ exports.getviewAll= async (req,res,next)=> {
         const limitNumber =20;
         const categories = await category.find({}).limit(limitNumber);
         // console.log(categories);
-        res.render('viewall.ejs',{categories});
+        res.render('viewall.ejs',{title: 'View All',categories});
         console.log("In viewall js");
     } catch (error) {
         res.status(500).send({message: Error.message || "Error Occured"});
@@ -43,7 +43,7 @@ exports.getviewAllById= async (req,res,next)=> {
         const limitNumber =20;
         const viewById = await latestnews.find({'category': viewallId}).limit(limitNumber);
         // console.log(viewById);
-        res.render('viewall.ejs',{viewById});
+        res.render('viewall.ejs',{title: 'View All', viewById});
         // console.log("In viewall js");
     } catch (error) {
         res.status(500).send({message: Error.message || "Error Occured"});
@@ -55,7 +55,7 @@ exports.searchnews = async(req, res,next) => {
     try {
       let searchTerm = req.body.searchTerm;
       let search = await category.find( { searchTerm });
-      res.render('search.ejs', { search } );
+      res.render('search.ejs', { title: 'Search',search } );
     } catch (error) {
       res.status(500).send({message: error.message || "Error Occured" });
     }
@@ -81,7 +81,7 @@ exports.explorelatest = async (req,res,next)=> {
     try {
         const limitNumber = 20;
         const latest = await latestnews.find({}).sort({_id: -1}).limit(limitNumber);
-        res.render('explore-latest.ejs',{latest});
+        res.render('explore-latest.ejs',{title: 'Explore Latest',latest});
         console.log("In explore-latest js");
     } catch (error) {
         res.status(500).send({message: Error.message || "Error Occured"});
@@ -95,7 +95,7 @@ exports.exploreRandom = async(req, res) => {
       let count = await latestnews.find().countDocuments();
       let random = Math.floor(Math.random() * count);
       let showrandom = await latestnews.findOne().skip(random).exec();
-      res.render('explore-random.ejs', {showrandom } );
+      res.render('explore-random.ejs', {title: 'Explore Random',showrandom } );
     } catch (error) {
       res.status(500).send({message: error.message || "Error Occured" });
     }
@@ -108,7 +108,7 @@ exports.exploreRandom = async(req, res) => {
 exports.submitnews = async(req, res,next) => {
     const infoErrorsObj = req.flash('infoErrors');
     const infoSubmitObj = req.flash('infoSubmit');
-    res.render('submit_news.ejs', {infoErrorsObj, infoSubmitObj  } );
+    res.render('submit_news.ejs', {title: 'Submit',infoErrorsObj, infoSubmitObj  } );
   }
   
   /**
