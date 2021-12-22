@@ -1,9 +1,6 @@
-body{
-    background-color: bisque;
-}
-@import url('https://fonts.googleapis.com/css2?family=Candal&family=Ceviche+One&family=Irish+Grover&display=swap');
+
 *{
-font-family:'Candel',sans-serif ;
+font-family: cursive ,sans-serif ;
 }
 #gamelogo{
     border-radius: 5px;
@@ -12,14 +9,10 @@ font-family:'Candel',sans-serif ;
 
 #exploreimg {
     display: flex;
-    /* justify-content: center;
-    align-items: center; */
     height: 256px;
     margin-bottom: 10px;
-    /* box-shadow: 0px 3px 6px rgba(0,0,0,.16); */
     overflow: hidden;
-    /* border-radius: 8px; */
-}  
+    }  
 #exploreimg--large {
     height: 330px;
 }
@@ -44,7 +37,6 @@ font-family:'Candel',sans-serif ;
 .category__img {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
   height: 100px;
   margin-bottom: 10px;
   box-shadow: 0px 3px 6px rgba(0,0,0,.16);

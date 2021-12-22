@@ -54,7 +54,11 @@ exports.getviewAllById= async (req,res,next)=> {
 exports.searchnews = async(req, res,next) => {
     try {
       let searchTerm = req.body.searchTerm;
-      let search = await category.find( { searchTerm });
+      // let searchTerm= req.params.searchTerm;
+      let search =  await category.find({name: searchTerm});
+      console.log(search);
+      console.log(searchTerm);
+      // let search = searchTerm;
       res.render('search.ejs', { title: 'Search',search } );
     } catch (error) {
       res.status(500).send({message: error.message || "Error Occured" });
@@ -151,7 +155,6 @@ exports.submitnews = async(req, res,next) => {
       req.flash('infoSubmit', 'News has been added.')
       res.redirect('/submit-news');
     } catch (error) {
-      // res.json(error);
       req.flash('infoErrors', error);
       res.redirect('/submit-news');
     }
