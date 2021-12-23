@@ -1,0 +1,92 @@
+<%- include('./layouts/main_layouts.ejs') -%>
+<h1 class="pb-4">Contact Us</h1>
+
+
+
+
+
+<section>
+    <div class="container" style="margin-top: 80px;">
+      <div class="row">
+        <div class="col">
+          <div id="img1">
+          <img src="/img/feedbacklogo.jpg" alt="" >
+        </div>
+          <form id="page" method="post" action="/contact" >            
+            <div class="form-group1">
+              <div class="email">
+                <p>Email Address</p>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email" name="email">
+            </div>
+              <div class="user">
+                <p>User</p>
+              <input type="text" class="form-control" id="User" placeholder="UserName"  name="user">
+              </div>
+            </div>
+            <div class="form-group3">
+              <label for="topic">Topic</label>
+              <input type="text" class="form-control" id="topic" placeholder="Topic"  name="topic">
+            </div>
+            <div class=" details">
+              <p>Details</p>
+              <textarea  style ="width: 100%; "name="details" id="details" placeholder="Write your Problem"  name="details"></textarea>
+            </div>
+            <div class="btns">
+            <button id="btns" onclick="myFunction(event)" class="btn btn-primary" style="margin-top: .5rem;">Submit</button>
+          </div>
+          <button type="submit" id="sub" style="display: none;"></button>
+          </form>
+          <div id="next">
+            <P>Thanks for giving feedback</P>
+            <img src="/img/feedback.jpg" alt="" id="img2">
+          <p>We will surely working on your feedback, Now you redirect home page 5 second</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+
+
+  <!-- Footer Start -->
+
+  <footer class="footer-distributed mt-5" style="background-color: #1c1b1f; border-radius: 8px;">
+    <div class="footer-left">
+      <img src="img/gamae.jpg" alt="" class="flogo">
+      <p class="footer-links">
+        <a href="/" class="link-1">Home</a>					
+        <a href="/about">About</a>							
+        <a href="/submit-news">Submit</a>					
+        <a href="/contact">Contact</a>
+      </p>
+      <p class="footer-company-name">Company Name © 2015</p>
+    </div>
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+      </div>
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>+1.555.555.5555</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="mailto:support@company.com">support@company.com</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About the game</span>
+        Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+      </p>
+      <div class="footer-icons">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+      </div>
+    </div>
+  </footer>

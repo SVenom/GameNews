@@ -1,6 +1,8 @@
 // const news = []
 require('../utils/database');
+const req = require('express/lib/request');
 const category = require("../model/category");
+const customerservice = require('../model/contact');
 const latestnews = require("../model/exp_news");
 
 
@@ -56,8 +58,8 @@ exports.searchnews = async(req, res,next) => {
       let searchTerm = req.body.searchTerm;
       // let searchTerm= req.params.searchTerm;
       let search =  await category.find({name: searchTerm});
-      console.log(search);
-      console.log(searchTerm);
+      // console.log(search);
+      // console.log(searchTerm);
       // let search = searchTerm;
       res.render('search.ejs', { title: 'Search',search } );
     } catch (error) {
@@ -161,7 +163,31 @@ exports.submitnews = async(req, res,next) => {
   }
 
 
+// Contact US
+// GET
 
+exports.contactus = async(req,res,next)=>{
+  res.render('contact.ejs',{title: 'Contact'});
+}
+exports.contactusonpost = async(req,res,next) =>{
+  console.log(req.body);
+  
+  try {
+    console.log(req.body);
+    
+    const contact = new  customerservice({
+        email: req.body.email,
+        user: req.body.user,
+        topic: req.body.topic,
+        details: req.body.details
+  })
+  await contact.save();
+  res.redirect('/');
+}catch (error){
+  res.status(500).send({message: error.message || "Error Occured" });
+}
+}
+  
 
 
 // async function insertCategoryData(){

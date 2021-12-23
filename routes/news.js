@@ -12,7 +12,8 @@ router.get('/explore-latest', getnewsController.explorelatest);
 router.get('/explore-random', getnewsController.exploreRandom);
 router.get('/submit-news', getnewsController.submitnews);
 router.post('/submit-news', getnewsController.submitnewsonpost);
-
+router.get('/contact', getnewsController.contactus);
+router.post('/contact', getnewsController.contactusonpost);
 
 
 
