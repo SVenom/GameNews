@@ -4,6 +4,7 @@ const req = require('express/lib/request');
 const category = require("../model/category");
 const customerservice = require('../model/contact');
 const latestnews = require("../model/exp_news");
+const User = require("../model/login");
 
 
 
@@ -169,6 +170,9 @@ exports.submitnews = async(req, res,next) => {
 exports.contactus = async(req,res,next)=>{
   res.render('contact.ejs',{title: 'Contact'});
 }
+
+
+// POST
 exports.contactusonpost = async(req,res,next) =>{
   console.log(req.body);
   
@@ -186,6 +190,29 @@ exports.contactusonpost = async(req,res,next) =>{
 }catch (error){
   res.status(500).send({message: error.message || "Error Occured" });
 }
+}
+
+
+//Login
+
+exports.login = async(req,res,next) => {
+  res.render("login.ejs",{title: 'Login'});
+}
+exports.loginonpost = async(req,res,next) =>{
+
+  try {
+    console.log(req.body);
+    
+    const login = new User({
+        email: req.body.email,
+        password: req.body.password
+  })
+  await login.save();
+  res.redirect('/submit-news');
+}catch (error){
+  res.status(500).send({message: error.message || "Error Occured" });
+}
+  
 }
   
 
