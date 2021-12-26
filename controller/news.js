@@ -38,7 +38,7 @@ exports.getviewAll= async (req,res,next)=> {
     }
 
 }
-
+// Viewall 
 exports.getviewAllById= async (req,res,next)=> {
     try {
         let viewallId = req.params.id;
@@ -53,7 +53,7 @@ exports.getviewAllById= async (req,res,next)=> {
     }
 
 }
-
+//search
 exports.searchnews = async(req, res,next) => {
     try {
       let searchTerm = req.body.searchTerm;
@@ -68,10 +68,7 @@ exports.searchnews = async(req, res,next) => {
     }
     
   }
-
-
-
-
+// Categories
 exports.getspecificNews = async (req,res,next)=> {
     try {
        let newsid = req.params.id;
@@ -83,7 +80,7 @@ exports.getspecificNews = async (req,res,next)=> {
     }
 
 }
-
+// explorelatest
 exports.explorelatest = async (req,res,next)=> {
     try {
         const limitNumber = 20;
@@ -95,7 +92,7 @@ exports.explorelatest = async (req,res,next)=> {
     }
 
 }
-
+// exploreramdom
 exports.exploreRandom = async(req, res) => {
     try {
         
@@ -107,7 +104,6 @@ exports.exploreRandom = async(req, res) => {
       res.status(500).send({message: error.message || "Error Occured" });
     }
   }
-
   /**
  * GET /submit-news
  * Submit News
@@ -117,14 +113,19 @@ exports.submitnews = async(req, res,next) => {
     const infoSubmitObj = req.flash('infoSubmit');
     res.render('submit_news.ejs', {title: 'Submit',infoErrorsObj, infoSubmitObj  } );
   }
-  
   /**
    * POST /submit-news
    * Submit News
   */
   exports.submitnewsonpost = async(req, res,next) => {
+
+    const specialkey = req.body.specialkey;
+    if(specialkey !== "Chotion2341"){
+      return res.send('You are not admin');
+    }
+
+
     try {
-  
       let imageUploadFile;
       let uploadPath;
       let newImageName;
@@ -143,6 +144,7 @@ exports.submitnews = async(req, res,next) => {
         })
   
       }
+     
   
       const newNews = new latestnews({
         name: req.body.name,
@@ -152,6 +154,8 @@ exports.submitnews = async(req, res,next) => {
         category: req.body.category,
         image: newImageName
       });
+
+      
       
       await newNews.save();
   
@@ -174,10 +178,10 @@ exports.contactus = async(req,res,next)=>{
 
 // POST
 exports.contactusonpost = async(req,res,next) =>{
-  console.log(req.body);
+  // console.log(req.body);
   
   try {
-    console.log(req.body);
+    // console.log(req.body);
     
     const contact = new  customerservice({
         email: req.body.email,
@@ -201,14 +205,26 @@ exports.login = async(req,res,next) => {
 exports.loginonpost = async(req,res,next) =>{
 
   try {
-    console.log(req.body);
-    
-    const login = new User({
-        email: req.body.email,
-        password: req.body.password
-  })
-  await login.save();
-  res.redirect('/submit-news');
+    // console.log(req.body);
+  //     const login = new User({
+  //       email: req.body.email,
+  //       password: req.body.password
+  // })
+  // await login.save();
+
+    const email = req.body.email;
+    const password = req.body.password;
+
+    const adminemail = await User.findOne({email});
+    if(adminemail === null){
+      return res.json({"msg":"you are no admin"})
+    }
+    if(adminemail.password == password ){
+      res.redirect('/submit-news');
+    }else{
+      res.send('invaild user');
+    }
+  // res.redirect('/submit-news');
 }catch (error){
   res.status(500).send({message: error.message || "Error Occured" });
 }

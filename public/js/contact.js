@@ -18,7 +18,6 @@ function myFunction(e){
         
             setTimeout(()=>{
             document.getElementById("sub").click();
-                // window.location.replace("/")
             },5000);
 
         }

@@ -433,3 +433,18 @@ LATEST NEWS
         <p>No items found.</p>
       <% } %> %> 
   </div>
+
+
+
+   // console.log(req.body);
+  //     const login = new User({
+  //       email: req.body.email,
+  //       password: req.body.password
+  // })
+  // await login.save();
+
+
+  const specialkey = req.body.specialkey;
+    if(specialkey !== "Chotion2341"){
+      return res.send('You are not admin');
+    }
