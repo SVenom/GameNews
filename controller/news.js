@@ -1,6 +1,7 @@
 // const news = []
 require('../utils/database');
 const req = require('express/lib/request');
+const res = require('express/lib/response');
 const category = require("../model/category");
 const customerservice = require('../model/contact');
 const latestnews = require("../model/exp_news");
@@ -120,7 +121,7 @@ exports.submitnews = async(req, res,next) => {
   exports.submitnewsonpost = async(req, res,next) => {
 
     const specialkey = req.body.specialkey;
-    if(specialkey !== "Chotion2341"){
+    if(specialkey !== "Chotion@2341"){
       return res.send('You are not admin');
     }
 
@@ -229,6 +230,12 @@ exports.loginonpost = async(req,res,next) =>{
   res.status(500).send({message: error.message || "Error Occured" });
 }
   
+}
+
+// About
+exports.about = async (req,res,next)=>{
+  res.render("about.ejs",{title: 'About'});
+
 }
   
 

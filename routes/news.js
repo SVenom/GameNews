@@ -16,6 +16,7 @@ router.get('/contact', getnewsController.contactus);
 router.post('/contact', getnewsController.contactusonpost);
 router.get('/login', getnewsController.login);
 router.post('/login', getnewsController.loginonpost);
+router.get('/about', getnewsController.about);
 
 
 
