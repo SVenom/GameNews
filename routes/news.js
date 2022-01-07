@@ -17,6 +17,9 @@ router.post('/contact', getnewsController.contactusonpost);
 router.get('/login', getnewsController.login);
 router.post('/login', getnewsController.loginonpost);
 router.get('/about', getnewsController.about);
+router.get('/delete/:id',getnewsController.delete);
+router.post('/update',getnewsController.update);
+router.get('/update/:id',getnewsController.updatedId);
 
 
 

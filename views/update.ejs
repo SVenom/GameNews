@@ -24,28 +24,28 @@
   
     <div class="col-8 mb-3">
   
-      <form action="/submit-news" enctype="multipart/form-data" method="POST">
+      <form action="/update" enctype="multipart/form-data" method="POST">
       
         <div class="row g-3">
   
           <div class="col-12">
             <label for="name" class="form-label">News Topic</label>
-            <input type="text" name="name" id="name" class="form-control" required>
+            <input type="text" name="name" id="name" class="form-control" required value="<%= news.name %> ">
           </div>
           
           <div class="col-12">
             <label for="description" class="form-label">Description</label>
-            <textarea name="description" id="description" class="form-control" cols="30" rows="4"></textarea>
+            <textarea name="description" id="description" class="form-control" cols="30" rows="4"><%= news.description %></textarea>
           </div>
           <div class="col-12">
-            <label for="description" class="form-label">News</label>
-            <textarea name="news" id="news" class="form-control" cols="30" rows="4"></textarea>
+            <label for="news" class="form-label">News</label>
+            <textarea name="news" id="news" class="form-control" cols="30" rows="4" ><%= news.news %></textarea>
           </div>
   
           
           <div class="col-12">
             <label for="category">Select Category</label>
-            <select class="form-select form-control" name="category" aria-label="Category">
+            <select class="form-select form-control" name="category" aria-label="Category" value="<%= news.category %>">
               <option selected>Select Category</option>
               <option value="Clash Of Clane">Clash Of Clane</option>
               <option value="PUBG">PUBG</option>
@@ -57,9 +57,11 @@
   
           <div class="col-12">
             <label for="image">Product Image</label>
-            <input type="file" class="form-control" name="image" accept="image/*">
+            <input type="file" class="form-control" name="image" accept="image/*"value="<%= news.image %>">
           </div>
-  
+          
+          <input type="hidden" value="<%- news._id %>" name="newsId">
+
           <div class="col-12">
             <button type="submit" class="btn btn-primary">Submit</button>
           </div>
