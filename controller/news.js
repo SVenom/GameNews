@@ -295,6 +295,22 @@ exports.about = async (req,res,next)=>{
 }
 
 // Update
+
+
+exports.updatedId = async (req,res,next) => {
+  
+  let isAdmin = false
+  if(localstroage.get('token')==='Adminlogin')
+      isAdmin=true
+
+    const updateid = req.params.id
+    const infoErrorsObj = req.flash('infoErrors');
+    const infoSubmitObj = req.flash('infoSubmit');
+    const news = await latestnews.findById(updateid)
+    res.render('update.ejs',{isAdmin,news,infoErrorsObj,infoSubmitObj})
+     
+    }
+
 exports.update = async (req,res,next) => {
   let isAdmin = false
         if(localstroage.get('token')==='Adminlogin')
@@ -316,29 +332,20 @@ exports.update = async (req,res,next) => {
               imageUploadFile.mv(uploadPath, function(err){
                 if(err) return res.satus(500).send(err);
               })
-    // await findByIdAndUpdate()
-    // console.log(req.body)
+            await latestnews.findByIdAndUpdate(req.body.newsId,{
+            
+              name: req.body.name,
+              description: req.body.description,
+              email: req.body.email,
+              news: req.body.news,
+              category: req.body.category,
+              image: newImageName
+            
+           })
+    console.log("news updated")
+    res.redirect("/explore-latest")
  
 }}
-exports.updatedId = async (req,res,next) => {
-  
-  let isAdmin = false
-  if(localstroage.get('token')==='Adminlogin')
-      isAdmin=true
-
-    const updateid = req.params.id
-    const infoErrorsObj = req.flash('infoErrors');
-    const infoSubmitObj = req.flash('infoSubmit');
-    const news = await latestnews.findById(updateid)
-    console.log(news)
-      if(news === [] || news === ""){
-        res.redirect('/explore-latest')
-      }else{
-        res.render('update.ejs',{isAdmin,news,infoErrorsObj,infoSubmitObj})
-      }
-      // console.log("Updated" , updateid);
-
-    }
 
 // Delete
 exports.delete = async (req,res,next) =>{
