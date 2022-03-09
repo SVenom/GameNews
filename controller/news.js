@@ -15,6 +15,7 @@ exports.getNews= async (req,res,next)=> {
     try {
         let isAdmin = false
         if(localstroage.get('token')==='Adminlogin')
+        console.log("token");
             isAdmin=true
       
         const limitNumber =5;
@@ -75,7 +76,6 @@ exports.searchnews = async(req, res,next) => {
             isAdmin=true
 
       let searchTerm = req.body.searchTerm;
-      // let searchTerm= req.params.searchTerm;
       let search =  await category.find({name: searchTerm});
       // console.log(search);
       // console.log(searchTerm);
@@ -158,10 +158,10 @@ exports.submitnews = async(req, res,next) => {
   */
   exports.submitnewsonpost = async(req, res,next) => {
 
-    const specialkey = req.body.specialkey;
-    if(specialkey !== "Chotion@2341"){
-      return res.send('You are not admin');
-    }
+    // const specialkey = req.body.specialkey;
+    // if(specialkey !== "Chotion@2341"){
+    //   return res.send('You are not admin');
+    // }
 
 
     try {
@@ -271,7 +271,7 @@ exports.loginonpost = async(req,res,next) =>{
     if(adminemail === null){
       return res.json({"msg":"you are no admin"})
     }
-    if(adminemail.password == password ){
+    if(adminemail.password === password ){
       localstroage.set('token','Adminlogin')
       // console.log(localstroage.get('token'))
       res.redirect('/');
